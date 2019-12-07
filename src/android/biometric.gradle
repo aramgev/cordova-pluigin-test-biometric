@@ -1,0 +1,40 @@
+repositories{    
+ jcenter()
+   flatDir {
+     dirs 'src/main/libs'
+   }
+}
+
+dependencies {
+  compile(name:'oz-liveness-sdk-1.8.0-release', ext:'aar')
+}
+
+android {
+ packagingOptions {
+  exclude 'META-INF/NOTICE'
+  exclude 'META-INF/LICENSE'
+ }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+
+    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.2.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.2.1'
+
+    implementation 'com.google.firebase:firebase-core:17.0.1'
+    implementation 'com.google.firebase:firebase-ml-vision:22.0.0'
+    implementation 'com.google.firebase:firebase-ml-vision-face-model:18.0.0'
+    implementation 'com.google.firebase:firebase-perf:18.0.1'
+
+    implementation "com.microsoft.appcenter:appcenter-analytics:2.2.0"
+    implementation "com.microsoft.appcenter:appcenter-crashes:2.2.0"
+
+}
