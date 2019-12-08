@@ -7,8 +7,18 @@ repositories{
 
 dependencies {
   compile(name:'oz-liveness-sdk-1.8.0-release', ext:'aar')
+}
 
-   classpath 'com.android.tools.build:gradle:3.5.0'
+buildscript {
+    repositories {
+        mavenCentral()
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.0'
+    }
 }
 
 android {
