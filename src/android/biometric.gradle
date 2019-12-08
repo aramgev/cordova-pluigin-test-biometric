@@ -5,6 +5,10 @@ repositories{
    }
 }
 
+dependencies {
+  compile(name:'oz-liveness-sdk-1.8.0-release', ext:'aar')
+}
+
 android {
  packagingOptions {
   exclude 'META-INF/NOTICE'
@@ -25,10 +29,10 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.2.1'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.2.1'
 
- //   implementation 'com.google.firebase:firebase-core:17.0.1'
- //   implementation 'com.google.firebase:firebase-ml-vision:22.0.0'
- //   implementation 'com.google.firebase:firebase-ml-vision-face-model:18.0.0'
- //   implementation 'com.google.firebase:firebase-perf:18.0.1'
+    //implementation 'com.google.firebase:firebase-core:17.0.1'
+    //implementation 'com.google.firebase:firebase-ml-vision:22.0.0'
+    //implementation 'com.google.firebase:firebase-ml-vision-face-model:18.0.0'
+    //implementation 'com.google.firebase:firebase-perf:18.0.1'
 
     implementation "com.microsoft.appcenter:appcenter-analytics:2.2.0"
     implementation "com.microsoft.appcenter:appcenter-crashes:2.2.0"
