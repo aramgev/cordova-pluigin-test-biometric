@@ -12,9 +12,9 @@
 	
 	<resource-file src="src/android/libs/oz-liveness-sdk-1.8.0-release.aar" target="libs/oz-liveness-sdk-1.8.0-release.aar"/>
 	
-	<resource-file src="src/android/res/values/colors.xml" target="res/values/colors.xml"/>
-	<resource-file src="src/android/res/values/strings.xml" target="res/values/strings.xml"/>
-	<resource-file src="src/android/res/values/styles.xml" target="res/values/styles.xml"/>	 
+	<source-file src="src/android/res/values/bcolors.xml" target-dir="res/values"/>
+	<source-file src="src/android/res/values/strings.xml" target-dir="res/values"/>
+	<source-file src="src/android/res/values/styles.xml" target-dir="res/values"/>	 
 	
 	
 </platform>
