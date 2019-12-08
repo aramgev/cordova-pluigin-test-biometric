@@ -43,11 +43,11 @@ public class BiometricAuth extends CordovaPlugin {
 
         ArrayList<Action> actions = new ArrayList<Action>();
         actions.add(Action.EyeBlink);
-        OzLivenessSDK sdk = new OzLivenessSDK();
-		sdk.setActions(actions);
+
+		OzLivenessSDK.setActions(actions);
 		
 		Intent intent = new Intent(this, CameraActivity.class);
-        startActivityForResult(intent, sdk.getRequestCode());
+        startActivityForResult(intent, OzLivenessSDK.getRequestCode());
 		
 		callbackContext.success("success");
     }
