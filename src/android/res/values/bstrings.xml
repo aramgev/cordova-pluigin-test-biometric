@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">OzLivenessSample</string>
-
+  
     <string name="check_internet_connection">Отсутствует интернет соединение.</string>
     <string name="action_cardname_zoomin">Приближение</string>
     <string name="action_cardname_zoomout">Отдаление</string>
