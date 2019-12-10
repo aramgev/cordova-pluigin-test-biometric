@@ -5,16 +5,19 @@
 </js-module>
 <platform name="android">
 	<config-file parent="/*" target="res/xml/config.xml">
-	<feature name="BiometricAuth"><param name="android-package" value="cordova-plugin-biometricauth.BiometricAuth" />
-	</feature></config-file><config-file parent="/*" target="AndroidManifest.xml">
-	</config-file><source-file src="src/android/BiometricAuth.java" target-dir="src/cordova-plugin-biometricauth/BiometricAuth" />
+		<feature name="BiometricAuth"><param name="android-package" value="cordova.plugin.biometricauth.BiometricAuth" />
+		</feature>
+	</config-file>
+	
+	<config-file parent="/*" target="AndroidManifest.xml"></config-file>
+	<source-file src="src/android/BiometricAuth.java" target-dir="src/cordova-plugin-biometricauth/BiometricAuth" />
 	<framework custom="true"  src="src/android/biometric.gradle" type="gradleReference" />
 	
-	<resource-file src="src/android/libs/oz-liveness-sdk-1.8.0-release.aar" target="libs/oz-liveness-sdk-1.8.0-release.aar"/>
+	<resource-file src="src/android/libs/oz-liveness-sdk-2.0.0-release.aar" target="libs/oz-liveness-sdk-2.0.0-release.aar"/>
 	
-	<source-file src="src/android/res/values/bcolors.xml" target-dir="res/values"/>
+	<source-file src="src/android/res/values/bolors.xml" target-dir="res/values"/>
 	<source-file src="src/android/res/values/bstrings.xml" target-dir="res/values"/>
-	<source-file src="src/android/res/values/bstyles.xml" target-dir="res/values"/>	 
+	<source-file src="src/android/res/values/bstyles.xml" target-dir="res/values"/>	
 	
 	
 </platform>
