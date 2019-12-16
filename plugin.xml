@@ -17,6 +17,9 @@
 	
 	<resource-file src="src/android/libs/oz-liveness-sdk-2.0.0-release.aar" target="libs/oz-liveness-sdk-2.0.0-release.aar"/>
 	
+	<framework src="com.android.support:appcompat-v7:+" />
+	<framework src="com.android.support:support-v4:27.1.1+" />
+	
 	<source-file src="src/android/res/values/bcolors.xml" target-dir="res/values"/>
 	<source-file src="src/android/res/values/bstrings.xml" target-dir="res/values"/>
 	<source-file src="src/android/res/values/bstyles.xml" target-dir="res/values"/>	
