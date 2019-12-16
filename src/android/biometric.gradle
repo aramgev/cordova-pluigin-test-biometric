@@ -8,7 +8,7 @@ repositories{
 dependencies {
   implementation(name:'oz-liveness-sdk-2.0.0-release', ext:'aar')
   
-  //compile 'com.android.support:appcompat-v7:23.2.1'
+  compile 'com.android.support:appcompat-v7:23.2.1'
   compile 'com.android.support:support-v4:27.1.0'
 }
 
