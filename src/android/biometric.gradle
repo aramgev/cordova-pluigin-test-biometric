@@ -9,7 +9,7 @@ dependencies {
   implementation(name:'oz-liveness-sdk-2.0.0-release', ext:'aar')
   
   //compile 'com.android.support:appcompat-v7:23.2.1'
- // compile 'com.android.support:support-v4:27.1.0'
+  compile 'com.android.support:support-v4:27.1.0'
 }
 
 android {
@@ -18,6 +18,13 @@ android {
   exclude 'META-INF/LICENSE'
  }
 }
+
+configurations.all {
+        resolutionStrategy {
+            force "com.google.android.gms:play-services-basement:15.0.1"
+            force "com.google.firebase:firebase-iid:16.0.0"
+        }
+      }
 
 dependencies {
 
@@ -46,6 +53,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-ml-vision:22.0.0'
     implementation 'com.google.firebase:firebase-ml-vision-face-model:18.0.0'
     implementation 'com.google.firebase:firebase-perf:18.0.1'
+    
+ 
+    implementation 'com.android.support:support-compat:28.0.0'
+    implementation 'com.android.support:support-core-utils:28.0.0'
 
     //implementation "com.microsoft.appcenter:appcenter-analytics:2.2.0"
     //implementation "com.microsoft.appcenter:appcenter-crashes:2.2.0"
