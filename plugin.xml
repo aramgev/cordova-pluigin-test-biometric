@@ -13,7 +13,9 @@
 	<source-file src="src/android/BiometricAuth.java" target-dir="src/cordova-plugin-biometricauth/BiometricAuth" />
 	<framework custom="true"  src="src/android/biometric.gradle" type="gradleReference" />
 	
-	<!-- <source-file  src="src/android/gradle.properties" target-dir="../../" /> 
+	 <source-file  src="src/android/gradle.properties" target-dir="../../" />
+	
+	<!--
 	
 	<framework src="com.android.support:appcompat-v7:+" />
 	<framework src="com.android.support:support-v4:27.1.1+" />
