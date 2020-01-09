@@ -97,7 +97,7 @@ public class BiometricAuth extends CordovaPlugin {
         //super.onActivityResult(requestCode, resultCode, data);
 
         String error = OzLivenessSDK.INSTANCE.getErrorFromIntent(data);
-        if (error != null) showHint(error);
+        //if (error != null) showHint(error);
 
         List<OzMediaResponse> sdkMediaResult = OzLivenessSDK.INSTANCE.getResultFromIntent(data);
 		mCallbackContext.success("success111");
