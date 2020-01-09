@@ -3,7 +3,6 @@ package cordova.plugin.biometricauth;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 
-import org.apache.cordova.Plugin;
 import org.apache.cordova.PluginResult;
 
 
