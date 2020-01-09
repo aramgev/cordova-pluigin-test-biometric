@@ -108,10 +108,14 @@ public class BiometricAuth extends CordovaPlugin {
         List<OzMediaResponse> sdkMediaResult = OzLivenessSDK.INSTANCE.getResultFromIntent(data);
 		
 		//mCallbackContext.success(sdkMediaResult);
-		String jsonString = new Gson().toJson(sdkMediaResult);
-		JSONObject mJSONObject = new JSONObject(jsonString);
-		PluginResult result = new PluginResult(PluginResult.Status.OK, mJSONObject);
-		mCallbackContext.sendPluginResult(result);
+		try {
+			String jsonString = new Gson().toJson(sdkMediaResult);
+			JSONObject mJSONObject = new JSONObject(jsonString);
+			PluginResult result = new PluginResult(PluginResult.Status.OK, mJSONObject);
+			mCallbackContext.sendPluginResult(result);
+		} catch (JSONException e) {
+            //e.printStackTrace();
+        }
 		
         //if (resultCode == RESULT_OK) {
         //    uploadAndAnalyze(sdkMediaResult);
