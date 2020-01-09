@@ -7,6 +7,9 @@ import org.apache.cordova.Plugin;
 import org.apache.cordova.PluginResult;
 
 
+import com.google.gson.Gson;
+
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -106,9 +109,10 @@ public class BiometricAuth extends CordovaPlugin {
         List<OzMediaResponse> sdkMediaResult = OzLivenessSDK.INSTANCE.getResultFromIntent(data);
 		
 		//mCallbackContext.success(sdkMediaResult);
-		
-		 PluginResult result = new PluginResult(PluginResult.Status.OK, sdkMediaResult);
-		 mCallbackContext.sendPluginResult(result);
+		String jsonString = new Gson().toJson(sdkMediaResult);
+		JSONObject mJSONObject = new JSONObject(jsonString);
+		PluginResult result = new PluginResult(PluginResult.Status.OK, mJSONObject);
+		mCallbackContext.sendPluginResult(result);
 		
         //if (resultCode == RESULT_OK) {
         //    uploadAndAnalyze(sdkMediaResult);
