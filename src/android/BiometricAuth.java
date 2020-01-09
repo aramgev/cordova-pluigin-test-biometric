@@ -80,7 +80,7 @@ public class BiometricAuth extends CordovaPlugin {
 					Intent intent = OzLivenessSDK.INSTANCE.createStartIntent(that.cordova.getActivity(), actions, 3, 3, true, null, null);
 					that.cordova.startActivityForResult(that, intent, 5);
 					
-					callbackContext.success("success123");
+					//callbackContext.success("success123");
             }
 
             @Override
