@@ -34,10 +34,13 @@ import com.ozforensics.liveness.sdk.network.manager.LoginStatusListener;
  * This class echoes a string called from JavaScript.
  */
 public class BiometricAuth extends CordovaPlugin {
+	
+	private CallbackContext mCallbackContext;
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		//Log.d("BiometricAuth", "teeest");
+		mCallbackContext = callbackContext;
         if (action.equals("testBiometric")) {
             String message = args.getString(0);
             this.testBiometric(callbackContext);
@@ -87,5 +90,20 @@ public class BiometricAuth extends CordovaPlugin {
         };
 		
         OzLivenessSDK.INSTANCE.login(this.cordova.getActivity().getApplicationContext(), "https://api-d.oz-services.ru/", "Artur.kartshikyan@evocabank.am", "g9Ub@dP7$am", loginStatusListener);
+    }
+	
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        //super.onActivityResult(requestCode, resultCode, data);
+
+        String error = OzLivenessSDK.INSTANCE.getErrorFromIntent(data);
+        if (error != null) showHint(error);
+
+        List<OzMediaResponse> sdkMediaResult = OzLivenessSDK.INSTANCE.getResultFromIntent(data);
+		mCallbackContext.success("success111");
+
+        //if (resultCode == RESULT_OK) {
+        //    uploadAndAnalyze(sdkMediaResult);
+        //}
     }
 }
