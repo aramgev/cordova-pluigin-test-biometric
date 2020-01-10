@@ -42,6 +42,25 @@ import com.ozforensics.liveness.sdk.network.manager.LoginStatusListener;
 public class BiometricAuth extends CordovaPlugin {
 	
 	private CallbackContext mCallbackContext;
+	
+    private UploadAndAnalyzeStatusListener analyzeStatusListener = new UploadAndAnalyzeStatusListener() {
+
+        @Override
+        public void onSuccess(@NotNull List<LivenessCheckResult> result, @Nullable String stringInterpretation) {
+            //if (stringInterpretation != null) showHint(stringInterpretation);
+			callbackContext.success(stringInterpretation);
+        }
+
+        @Override
+        public void onStatusChanged(@Nullable String status) {
+            //if (status != null) showHint(status);
+        }
+
+        @Override
+        public void onError(@NotNull List<LivenessCheckResult> result, @NotNull String errorMessage) {
+            //showHint(errorMessage);
+        }
+    };
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -107,6 +126,7 @@ public class BiometricAuth extends CordovaPlugin {
 
         List<OzMediaResponse> sdkMediaResult = OzLivenessSDK.INSTANCE.getResultFromIntent(data);
 		
+		/*
 		//mCallbackContext.success(sdkMediaResult);
 		try {
 			String jsonString = new Gson().toJson(sdkMediaResult);
@@ -116,9 +136,21 @@ public class BiometricAuth extends CordovaPlugin {
 		} catch (JSONException e) {
             //e.printStackTrace();
         }
+		*/
 		
-        //if (resultCode == RESULT_OK) {
-        //    uploadAndAnalyze(sdkMediaResult);
-        //}
+        if (resultCode == RESULT_OK) {
+            uploadAndAnalyze(sdkMediaResult);
+        }
     }
+	
+	private void uploadAndAnalyze(List<OzMediaResponse> mediaList) {
+        if (mediaList != null) {
+			mediaList.add(new OzMediaResponse(OzMediaResponse.Type.PHOTO, "download/doc.png", NetworkMediaTags.PhotoIdBack));
+            OzLivenessSDK.INSTANCE.uploadMediaAndAnalyze(
+                    getApplicationContext(),
+                    mediaList,
+                    analyzeStatusListener
+            );
+        }
+    } 
 }
