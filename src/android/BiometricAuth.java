@@ -37,6 +37,7 @@ import com.ozforensics.liveness.sdk.actions.model.OzMediaResponse;
 import com.ozforensics.liveness.sdk.network.manager.UploadAndAnalyzeStatusListener;
 import com.ozforensics.liveness.sdk.network.manager.LoginStatusListener;
 import com.ozforensics.liveness.sdk.utility.enums.NetworkMediaTags;
+import com.ozforensics.liveness.sdk.actions.model.LivenessCheckResult;
 
 /**
  * This class echoes a string called from JavaScript.
