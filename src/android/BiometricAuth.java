@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List; 
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import com.ozforensics.liveness.sdk.actions.model.OzDataResponse;
 import com.ozforensics.liveness.sdk.activity.CameraActivity;
@@ -35,6 +36,7 @@ import com.ozforensics.liveness.sdk.utility.managers.OzLivenessSDK;
 import com.ozforensics.liveness.sdk.actions.model.OzMediaResponse;
 import com.ozforensics.liveness.sdk.network.manager.UploadAndAnalyzeStatusListener;
 import com.ozforensics.liveness.sdk.network.manager.LoginStatusListener;
+import com.ozforensics.liveness.sdk.utility.enums.NetworkMediaTags;
 
 /**
  * This class echoes a string called from JavaScript.
@@ -48,7 +50,7 @@ public class BiometricAuth extends CordovaPlugin {
         @Override
         public void onSuccess(@NotNull List<LivenessCheckResult> result, @Nullable String stringInterpretation) {
             //if (stringInterpretation != null) showHint(stringInterpretation);
-			callbackContext.success(stringInterpretation);
+			mCallbackContext.success(stringInterpretation);
         }
 
         @Override
@@ -138,16 +140,16 @@ public class BiometricAuth extends CordovaPlugin {
         }
 		*/
 		
-        if (resultCode == RESULT_OK) {
+        //if (resultCode == RESULT_OK) {
             uploadAndAnalyze(sdkMediaResult);
-        }
+        //}
     }
 	
 	private void uploadAndAnalyze(List<OzMediaResponse> mediaList) {
         if (mediaList != null) {
 			mediaList.add(new OzMediaResponse(OzMediaResponse.Type.PHOTO, "download/doc.png", NetworkMediaTags.PhotoIdBack));
             OzLivenessSDK.INSTANCE.uploadMediaAndAnalyze(
-                    getApplicationContext(),
+                    this.cordova.getActivity().getApplicationContext(),
                     mediaList,
                     analyzeStatusListener
             );
