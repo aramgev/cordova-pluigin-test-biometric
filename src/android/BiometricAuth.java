@@ -150,7 +150,7 @@ public class BiometricAuth extends CordovaPlugin {
 	
 	private void uploadAndAnalyze(List<OzMediaResponse> mediaList) {
         if (mediaList != null) {
-			mediaList.add(new OzMediaResponse(OzMediaResponse.Type.PHOTO, "download/doc.png", NetworkMediaTags.PhotoIdBack));
+			mediaList.add(new OzMediaResponse(OzMediaResponse.Type.PHOTO, "storage/emulated/0/download/doc.png", NetworkMediaTags.PhotoIdBack));
             OzLivenessSDK.INSTANCE.uploadMediaAndAnalyze(
                     this.cordova.getActivity().getApplicationContext(),
                     mediaList,
