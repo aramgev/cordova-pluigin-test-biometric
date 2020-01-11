@@ -57,11 +57,13 @@ public class BiometricAuth extends CordovaPlugin {
         @Override
         public void onStatusChanged(@Nullable String status) {
             //if (status != null) showHint(status);
+			
         }
 
         @Override
         public void onError(@NotNull List<LivenessCheckResult> result, @NotNull String errorMessage) {
             //showHint(errorMessage);
+			mCallbackContext.error(errorMessage);
         }
     };
 
