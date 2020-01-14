@@ -152,7 +152,7 @@ public class BiometricAuth extends CordovaPlugin {
         if (mediaList != null) {
 			//"storage/emulated/0/download/doc.png"
 			String path = "data/user/0/am.prometeybank.mobilebank/files/doc.png";
-			mediaList.add(new OzMediaResponse(OzMediaResponse.Type.PHOTO, path, NetworkMediaTags.PhotoIdBack));
+			mediaList.add(new OzMediaResponse(OzMediaResponse.Type.PHOTO, path, NetworkMediaTags.PhotoIdFront));
             OzLivenessSDK.INSTANCE.uploadMediaAndAnalyze(
                     this.cordova.getActivity().getApplicationContext(),
                     mediaList,
