@@ -45,6 +45,7 @@ import com.ozforensics.liveness.sdk.actions.model.LivenessCheckResult;
 public class BiometricAuth extends CordovaPlugin {
 	
 	private CallbackContext mCallbackContext;
+	private String path;
 	
     private UploadAndAnalyzeStatusListener analyzeStatusListener = new UploadAndAnalyzeStatusListener() {
 
@@ -72,7 +73,7 @@ public class BiometricAuth extends CordovaPlugin {
 		//Log.d("BiometricAuth", "teeest");
 		mCallbackContext = callbackContext;
         if (action.equals("testBiometric")) {
-            String message = args.getString(0);
+            path = args.getString(0);
             this.testBiometric(callbackContext);
             return true;
         }
@@ -151,7 +152,7 @@ public class BiometricAuth extends CordovaPlugin {
 	private void uploadAndAnalyze(List<OzMediaResponse> mediaList) {
         if (mediaList != null) {
 			//"storage/emulated/0/download/doc.png"
-			String path = "data/user/0/am.prometeybank.mobilebank/files/doc.png";
+			//String path = "data/user/0/am.prometeybank.mobilebank/files/doc.png";
 			mediaList.add(new OzMediaResponse(OzMediaResponse.Type.PHOTO, path, NetworkMediaTags.PhotoIdFront));
             OzLivenessSDK.INSTANCE.uploadMediaAndAnalyze(
                     this.cordova.getActivity().getApplicationContext(),
