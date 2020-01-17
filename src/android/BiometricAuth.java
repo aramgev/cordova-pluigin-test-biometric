@@ -13,6 +13,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.content.Context;
+import android.content.res.Resources;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
