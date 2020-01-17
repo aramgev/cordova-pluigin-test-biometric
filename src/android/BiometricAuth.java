@@ -126,9 +126,9 @@ public class BiometricAuth extends CordovaPlugin {
 		//String password = intent.getStringExtra("PASSWORD"); ? change to initalize?
 		Context context = this.cordova.getActivity();
 		String packageName = context.getPackageName();
-		String api = context.getString(resources.getIdentifier("api_url", STRING, packageName);
-		String username = context.getString(resources.getIdentifier("username", STRING, packageName);
-		String password = context.getString(resources.getIdentifier("password", STRING, packageName);
+		String api = context.getString(resources.getIdentifier("api_url", STRING, packageName));
+		String username = context.getString(resources.getIdentifier("username", STRING, packageName));
+		String password = context.getString(resources.getIdentifier("password", STRING, packageName));
         OzLivenessSDK.INSTANCE.login(this.cordova.getActivity().getApplicationContext(), api, username, password, loginStatusListener);
     }
 	
