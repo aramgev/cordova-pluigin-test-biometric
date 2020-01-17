@@ -33,6 +33,12 @@
 	<source-file src="src/android/res/values/bstrings.xml" target-dir="res/values"/>
 	<source-file src="src/android/res/values/bstyles.xml" target-dir="res/values"/>	
 	
+	<config-file target="res/values/bstrings.xml" parent="/*">
+		<string name="api_url">$API_URL</string>
+		<string name="username">$USERNAME</string>
+		<string name="password">$PASSWORD</string>
+	</config-file>
+	
 	
 </platform>
 </plugin>
