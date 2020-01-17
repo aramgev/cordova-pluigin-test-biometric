@@ -15,9 +15,9 @@
 	
 	 <source-file  src="src/android/gradle.properties" target-dir="../../" />
 	 
-	 <preference name="API_URL" />
-	 <preference name="USERNAME" />
-	 <preference name="PASSWORD" />
+	 <preference name="API_URL"  default="a"/>
+	 <preference name="USERNAME" default="a"/>
+	 <preference name="PASSWORD" default="a"/>
 	
 	<!--
 	
