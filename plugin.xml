@@ -14,6 +14,10 @@
 	<framework custom="true"  src="src/android/biometric.gradle" type="gradleReference" />
 	
 	 <source-file  src="src/android/gradle.properties" target-dir="../../" />
+	 
+	 <preference name="API_URL" />
+	 <preference name="USERNAME" />
+	 <preference name="PASSWORD" />
 	
 	<!--
 	

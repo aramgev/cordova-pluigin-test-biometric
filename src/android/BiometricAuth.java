@@ -120,7 +120,11 @@ public class BiometricAuth extends CordovaPlugin {
             }
         };
 		
-        OzLivenessSDK.INSTANCE.login(this.cordova.getActivity().getApplicationContext(), "https://api-d.oz-services.ru/", "Artur.kartshikyan@evocabank.am", "g9Ub@dP7$am", loginStatusListener);
+		Intent intent = this.cordova.getActivity().getIntent();
+		String api = intent.getStringExtra("API_URL");
+		String username = intent.getStringExtra("USERNAME"); 
+		String password = intent.getStringExtra("PASSWORD"); 
+        OzLivenessSDK.INSTANCE.login(this.cordova.getActivity().getApplicationContext(), api, username, password, loginStatusListener);
     }
 	
 	@Override
