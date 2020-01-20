@@ -55,7 +55,8 @@ public class BiometricAuth extends CordovaPlugin {
         @Override
         public void onSuccess(@NotNull List<LivenessCheckResult> result, @Nullable String stringInterpretation) {
             //if (stringInterpretation != null) showHint(stringInterpretation);
-			mCallbackContext.success(stringInterpretation);
+			String jsonString = new Gson().toJson(result);
+			mCallbackContext.success(jsonString);
         }
 
         @Override
@@ -67,7 +68,9 @@ public class BiometricAuth extends CordovaPlugin {
         @Override
         public void onError(@NotNull List<LivenessCheckResult> result, @NotNull String errorMessage) {
             //showHint(errorMessage);
-			mCallbackContext.error(errorMessage);
+			//mCallbackContext.error(errorMessage);
+			String jsonString = new Gson().toJson(result);
+			mCallbackContext.error(jsonString);
         }
     };
 
